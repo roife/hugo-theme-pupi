@@ -1,0 +1,14 @@
+Posted by
+
+{{ with $.Params.author }}
+<span class="author">
+  {{ if (reflect.IsSlice .) }}
+  {{ delimit . ", " }}
+  {{ else }}
+  {{ . }}
+  {{ end }}
+</span>
+{{ else }}
+{{ .Site.Params.author }}
+{{ end }}
+on {{ .Date.Format "Mon, Jan 2, 2006" }}

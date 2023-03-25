@@ -1,0 +1,18 @@
+{{ if (ne .Params.comment false) -}}
+
+{{ if .Site.DisqusShortname }}
+{{ template "_internal/disqus.html" . }}
+{{ end }}
+
+{{ $utterances := .Site.Params.utterances }}
+{{ if $utterances.enable }}
+<script
+  src="https://utteranc.es/client.js"
+  repo="{{ $utterances.repo }}"
+  issue-term="{{ $utterances.issueTerm }}"
+  label="{{ $utterances.label }}"
+  theme="{{ $utterances.theme }}"
+  crossorigin="anonymous"
+  async></script>
+{{ end }}
+{{ end }}

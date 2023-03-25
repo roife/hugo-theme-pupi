@@ -1,0 +1,74 @@
+{{ define "main" }}
+
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+
+      <!-- Post Container -->
+      <div class="
+              col-lg-9 col-lg-offset-1
+              col-md-10 col-md-offset-1
+              post-container">
+        {{ .Content }}
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          {{ with .Prev }}
+          <li class="previous">
+            <a href="{{ .RelPermalink }}" data-toggle="tooltip" data-placement="top" title="{{ .Title }}">
+              Previous<br>
+              <span>{{ .Title }}</span>
+            </a>
+          </li>
+          {{ end }}
+          {{ with .Next }}
+          <li class="next">
+            <a href="{{ .RelPermalink }}" data-toggle="tooltip" data-placement="top" title="{{ .Title }}">
+              Next<br>
+              <span>{{ .Title }}</span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        <!-- comments -->
+        {{ partial "comments.html" . }}
+
+        <!-- math -->
+        {{ partial "math.html" . }}
+
+        <!-- Syntax Highlighting -->
+        <style type="text/css" media="screen">
+         @media (prefers-color-scheme: dark) {
+           {{ partial "css/syntax-dark.css" . | safeCSS }}
+         }
+         @media (prefers-color-scheme: light) {
+           {{ partial "css/syntax-light.css" . | safeCSS }}
+         }
+        </style>
+      </div>
+
+      <!-- Side Catalog Container -->
+      {{ $toc := .Scratch.Get "toc" }}
+      {{ if $toc }}
+      <div class="
+              col-lg-2 col-lg-offset-0
+              visible-lg-block
+              sidebar-container
+              catalog-container">
+        <div class="side-catalog">
+          <hr class="hidden-sm hidden-xs">
+          <h5>
+            <a class="catalog-toggle" href="#">CATALOG</a>
+          </h5>
+          <ul class="catalog-body"></ul>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</article>
+
+{{ end }}

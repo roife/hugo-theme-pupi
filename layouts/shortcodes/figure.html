@@ -1,0 +1,33 @@
+<figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
+  {{- if .Get "link" -}}
+  <a href="{{ .Get "link" }}"
+     class="paragraph-image"
+     {{ with .Get "target" }} target="{{ . }}" {{ end }}
+     {{ with .Get "rel" }} rel="{{ . }}" {{ end }}>
+    {{- end -}}
+    <img data-src="{{ .Get "src" }}"
+         data-action="zoom"
+         class="lazyload"
+         {{- if or (.Get "alt") (.Get "caption") }}
+         alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
+         {{- end -}}
+         {{- with .Get "width" }} width="{{ . }}"{{ end -}}
+         {{- with .Get "height" }} height="{{ . }}"{{ end -}}
+    /><!-- Closing img tag -->
+    {{- if .Get "link" }}</a>{{ end -}}
+    {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
+    <figcaption class="image-caption">
+      {{ with (.Get "title") -}}
+      <h4>{{ . }}</h4>
+      {{- end -}}
+      {{- if or (.Get "caption") (.Get "attr") -}}<p>
+        {{- .Get "caption" | markdownify -}}
+        {{- with .Get "attrlink" }}
+        <a href="{{ . }}">
+          {{- end -}}
+          {{- .Get "attr" | markdownify -}}
+          {{- if .Get "attrlink" }}</a>{{ end }}</p>
+        {{- end }}
+    </figcaption>
+    {{- end }}
+</figure>

@@ -1,0 +1,113 @@
+baseURL = "http://localhost:1313/"
+title = "Hugo Pupi"
+
+theme = "pupi"
+themesDir = "themes"
+
+copyright = ""
+paginate = 10
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+
+hasCJKLanguage = true
+enableInlineShortcodes = true
+enableEmoji = true
+# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
+# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
+ignoreErrors = ["error-remote-getjson"]
+
+disqusShortname = ""
+googleAnalytics = ""
+
+[outputs]
+home = ["HTML", "JSON", "RSS"]
+
+# prevent build failures when using Hugo's template _internal/opengraph.html 
+[taxonomies]
+tag = "tags"
+series = "series"
+
+[markup]
+[markup.highlight]
+# Use different color scheme in light/dark mode
+noClasses = false
+codeFences = true
+guessSyntax = true
+lineNos = false
+lineNumbersInTable = false
+# style = "dracula"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[menu]
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = -10
+[[menu.main]]
+identifier = "series"
+name = "Series"
+url = "/series/"
+weight = 10
+[[menu.main]]
+identifier = "archive"
+name = "Archive"
+url = "/archive/"
+weight = 20
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 50
+
+
+[params]
+author = "John Doe"
+description = "A personal website"
+keywords = "blog, developer, personal"
+img_home = "img/home-bg.jpg"
+img_404 = "img/404-bg.jpg"
+
+useFaviconGenerator = true
+
+custom_js = []
+custom_css = [] # ["css/custom.css"]  Add your file to assets folder  [assets/css/custom.css]
+
+lightTabColor = "#FFFFFF"
+darkTabColor = "#000000"
+
+comment = true
+katex = true
+toc = true
+
+[params.sidebar]
+enable = false
+gravatarEmail = ""
+# Overwritten by your gravatar image if `gravatarEmail` is filled
+avatar = "img/home-bg.jpg"
+bio = "a personal website"
+
+[params.social]
+twitter = "johndoe"
+facebook = "johndoe"
+zhihu = "johndoe"
+weibo = "johndoe"
+github = "johndoe"
+email = "johndoe"
+gitlab = "johndoe"
+linkedin = "johndoe"
+rss = true
+
+[[params.friends]]
+name = "John Doe"
+url = "https://gohugo.io"
+
+[params.utterances]
+enable = true
+repo = "roife/hugo-theme-pupi"
+issueTerm = "pathname"
+label = "Comment"
+theme = "preferred-color-scheme"
+
