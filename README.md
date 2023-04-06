@@ -32,6 +32,7 @@
   + [x] Shortcode template for `figure`
   + [x] KaTeX support
   + [x] Multiple authors support
+  + [x] Proof environment
   + [x] ... (lots of adjustments on HTML, CSS, JS)
 
 ## Installation

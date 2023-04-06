@@ -3,27 +3,56 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-          // customised options
-          // • auto-render specific keys, e.g.:
-          delimiters: [
-            {left: "$$", right: "$$", display: true},
-            {left: "\\(", right: "\\)", display: false},
-            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
-            {left: "\\begin{align}", right: "\\end{align}", display: true},
-            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
-            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
-            {left: "\\begin{alignat*}", right: "\\end{alignat*}", display: true},
-            {left: "\\begin{alignedat}", right: "\\end{alignedat}", display: true},
-            {left: "\\begin{aligned}", right: "\\end{aligned}", display: true},
-            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
-            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
-            {left: "\\[", right: "\\]", display: true}
-          ],
-          // • rendering keys, e.g.:
-          throwOnError : false
-        });
-    });
+ document.addEventListener("DOMContentLoaded", function() {
+   renderMathInElement(document.body, {
+     // customised options
+     // • auto-render specific keys, e.g.:
+     delimiters: [
+       {left: "\\(", right: "\\)", display: false},
+
+       {left: "\\begin{array}", right: "\\end{array}", display: true},
+
+       {left: "\\begin{matrix}", right: "\\end{matrix}", display: true},
+       {left: "\\begin{matrix*}", right: "\\end{matrix*}", display: true},
+       {left: "\\begin{bmatrix}", right: "\\end{bmatrix}", display: true},
+       {left: "\\begin{bmatrix*}", right: "\\end{bmatrix*}", display: true},
+       {left: "\\begin{Bmatrix}", right: "\\end{Bmatrix}", display: true},
+       {left: "\\begin{Bmatrix*}", right: "\\end{Bmatrix*}", display: true},
+       {left: "\\begin{vmatrix}", right: "\\end{vmatrix}", display: true},
+       {left: "\\begin{vmatrix*}", right: "\\end{vmatrix*}", display: true},
+       {left: "\\begin{Vmatrix}", right: "\\end{Vmatrix}", display: true},
+       {left: "\\begin{Vmatrix*}", right: "\\end{Vmatrix*}", display: true},
+       {left: "\\begin{pmatrix}", right: "\\end{pmatrix}", display: true},
+       {left: "\\begin{pmatrix*}", right: "\\end{pmatrix*}", display: true},
+       {left: "\\begin{smallmatrix}", right: "\\end{smallmatrix}", display: true},
+
+       {left: "\\begin{cases}", right: "\\end{cases}", display: true},
+       {left: "\\begin{rcases}", right: "\\end{rcases}", display: true},
+
+       {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+       {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+       {left: "\\begin{align}", right: "\\end{align}", display: true},
+       {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+       {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+       {left: "\\begin{alignat*}", right: "\\end{alignat*}", display: true},
+       {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+       {left: "\\begin{gather*}", right: "\\end{gather*}", display: true},
+       {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+
+       {left: "\\begin{alignedat}", right: "\\end{alignedat}", display: true},
+       {left: "\\begin{aligned}", right: "\\end{aligned}", display: true},
+       {left: "\\begin{gathered}", right: "\\end{gathered}", display: true},
+
+       {left: "\\begin{darray}", right: "\\end{darray}", display: true},
+       {left: "\\begin{dcases}", right: "\\end{dcases}", display: true},
+       {left: "\\begin{drcases}", right: "\\end{drcases}", display: true},
+
+
+       {left: "\\[", right: "\\]", display: true}
+     ],
+     // • rendering keys, e.g.:
+     throwOnError : false
+   });
+ });
 </script>
 {{ end }}

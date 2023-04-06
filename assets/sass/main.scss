@@ -297,7 +297,7 @@ samp {
   }
   ul,
   ol {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     @media screen and (max-width: 768px) {
       & {
         padding-left: 30px;
@@ -1201,4 +1201,57 @@ footer {
 
 .utterances {
   max-width: 100%;
+}
+
+// Math environment
+.math_block {
+  display: block;
+  box-shadow: 0 .5px 3px var(--gray-light);
+  padding: .1rem 1rem;
+  border-radius: .2rem;
+  margin-bottom: 20px;
+
+  p {
+    margin: 1rem 1rem 1rem 0rem;
+  }
+}
+
+.definition {
+  &:before {
+    content: "Definition.\00a0\00a0";
+    float: left;
+    font-weight: bold;
+  }
+}
+
+.theorem {
+    display: block;
+    margin: 10px;
+    font-style: normal;
+
+    &:before {
+      content:"Theorem.\00a0\00a0";
+      float:left;
+      font-weight:bold;
+    }
+}
+
+.proof {
+  display:block;
+  margin: 10px;
+  font-style:normal;
+
+  &:before {
+    content:'Proof.\00a0\00a0';
+    float:left;
+    font-weight:bold;
+  }
+}
+
+.proof_qed {
+  display: block;
+  border: 1px solid #000;
+  width: .9em;
+  height: .9em;
+  margin: .3em .3em 1em auto;
 }

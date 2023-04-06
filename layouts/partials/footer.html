@@ -71,21 +71,21 @@
 {{ $navJs := resources.Get "js/jquery.nav.js" | minify | fingerprint }}
 <script type="text/javascript" src='{{ $navJs.RelPermalink }}'></script>
 <script>
-   $(document).ready( function () {
-    $('.catalog-body').onePageNav({
-      currentClass: "active",
-      changeHash: !1,
-      easing: "swing",
-      filter: "",
-      scrollSpeed: 800,
-      scrollOffset: 0,
-      scrollThreshold: .2,
-      begin: null,
-      end: null,
-      scrollChange: null,
-      padding: 80
-    });
-  });
+ $(document).ready( function () {
+   $('.catalog-body').onePageNav({
+     currentClass: "active",
+     changeHash: !1,
+     easing: "swing",
+     filter: "",
+     scrollSpeed: 800,
+     scrollOffset: 0,
+     scrollThreshold: .2,
+     begin: null,
+     end: null,
+     scrollChange: null,
+     padding: 80
+   });
+ });
 </script>
 
 {{ end }}
@@ -97,3 +97,17 @@
 
 {{ $zoom_js := resources.Get "zoomjs/zoom.js" | resources.Minify }}
 <script src="{{ $zoom_js.RelPermalink }}"></script>
+
+<!-- Proof environment -->
+<script>
+ $("div.definition").wrap("<div class='math_block'></div>");
+
+ $('div.theorem').next('div.proof').each(function() {
+   $(this).prev('div.theorem').addBack().wrapAll('<div class="math_block"></div>');
+ });
+
+ $('.proof').each(function() {
+   // 在当前 .proof 元素后面插入一个带有 .proof_end 类的新的 <div> 元素
+   $(this).after('<div class="proof_qed"></div>');
+ });
+</script>
