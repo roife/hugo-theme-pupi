@@ -95,19 +95,20 @@
 {{ template "_internal/google_analytics.html" . }}
 {{ end }}
 
+<!-- ZoomJS -->
 {{ $zoom_js := resources.Get "zoomjs/zoom.js" | resources.Minify }}
 <script src="{{ $zoom_js.RelPermalink }}"></script>
 
-<!-- Proof environment -->
+<!-- Proof Environment -->
 <script>
  $("div.definition").wrap("<div class='math_block'></div>");
 
- $('div.theorem').next('div.proof').each(function() {
-   $(this).prev('div.theorem').addBack().wrapAll('<div class="math_block"></div>');
- });
+ let proof_env = ["theorem", "lemma", "corollary", "proposition"];
+ proof_env.forEach(function(env) {
+   $('div.' + env + ' + div.proof').each(function() {
+     $(this).prev('div.' + env).addBack().wrapAll('<div class="math_block"></div>');
+   });
 
- $('.proof').each(function() {
-   // 在当前 .proof 元素后面插入一个带有 .proof_end 类的新的 <div> 元素
-   $(this).after('<div class="proof_qed"></div>');
+   $('div.' + env).not(':has(+div.proof)').wrap('<div class="math_block"></div>');
  });
 </script>

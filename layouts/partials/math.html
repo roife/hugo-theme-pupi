@@ -55,4 +55,21 @@
    });
  });
 </script>
+
+<!-- PseudocodeJS -->
+{{ $pseudocode_js := resources.Get "js/pseudocode.js" | resources.Minify }}
+<script defer id="pseudocodejs" src="{{ $pseudocode_js.RelPermalink }}"></script>
+
+<script>
+ pseudocodejs.addEventListener('load', function() {
+   pseudocode.renderClass("pseudocode", {
+     lineNumber: true,
+     lineNumberPunc: ':',
+     scopeLines: true,
+     commentDelimiter: '▹ ',
+     noEnd: true,
+   });
+ });
+</script>
+
 {{ end }}

@@ -4,6 +4,7 @@
 @import "_side-catalog.scss";
 @import "_search.scss";
 @import "_highlight.scss";
+@import "_pseudocode.scss";
 
 @media (prefers-color-scheme: light) {
   // @import "highlight-light.scss";
@@ -1208,7 +1209,7 @@ footer {
   display: block;
   box-shadow: 0 .5px 3px var(--gray-light);
   padding: .1rem 1rem;
-  border-radius: .2rem;
+  border-radius: .6rem;
   margin-bottom: 20px;
 
   p {
@@ -1225,10 +1226,6 @@ footer {
 }
 
 .theorem {
-    display: block;
-    margin: 10px;
-    font-style: normal;
-
     &:before {
       content:"Theorem.\00a0\00a0";
       float:left;
@@ -1236,22 +1233,34 @@ footer {
     }
 }
 
-.proof {
-  display:block;
-  margin: 10px;
-  font-style:normal;
-
+.lemma {
   &:before {
-    content:'Proof.\00a0\00a0';
+    content:'Lemma.\00a0\00a0';
     float:left;
     font-weight:bold;
   }
 }
 
-.proof_qed {
-  display: block;
-  border: 1px solid #000;
-  width: .9em;
-  height: .9em;
-  margin: .3em .3em 1em auto;
+.corollary {
+  &:before {
+    content:'Corollary.\00a0\00a0';
+    float:left;
+    font-weight:bold;
+  }
+}
+
+.proposition {
+  &:before {
+    content:'Prop.\00a0\00a0';
+    float:left;
+    font-weight:bold;
+  }
+}
+
+.proof {
+  &:before {
+    content:'Proof.\00a0\00a0';
+    float:left;
+    font-weight:bold;
+  }
 }

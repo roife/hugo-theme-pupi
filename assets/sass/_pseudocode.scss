@@ -1,0 +1,96 @@
+.ps-root {
+  font-family: KaTeX_Main, 'Times New Roman', Times, serif;
+  font-size: 1em;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased !important;
+
+  .ps-algorithm {
+    margin: 0.8em 0;
+
+    /* algorithm environment has borders; algorithmic has not */
+    border-top: 2px solid var(--gray-dark);
+    border-bottom: 1px solid var(--gray-dark);
+
+    &.with-caption > .ps-line:first-child {
+      border-bottom: 1px solid var(--gray-dark);
+    }
+  }
+
+  .katex {
+    text-indent: 0;
+    font-size: 1em;
+  }
+
+  .MathJax_CHTML, .MathJax {
+    text-indent: 0;
+    font-size: 1em !important;
+  }
+
+  .ps-line {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+  }
+
+  .ps-funcname {
+    font-family: KaTeX_Main, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-variant: small-caps;
+    font-style: normal;
+    text-transform: none;
+  }
+
+  .ps-keyword {
+    font-family: KaTeX_Main, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-variant: normal;
+    font-style: normal;
+    text-transform: none;
+  }
+
+  .ps-comment {
+    font-family: KaTeX_Main, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+    text-transform: none;
+  }
+
+  .ps-linenum {
+    font-size: 0.8em;
+    line-height: 1em;
+    width: 1.6em;
+    text-align: right;
+    display: inline-block;
+    position: relative;
+    padding-right: 0.3em;
+  }
+
+  .ps-algorithmic.with-linenum .ps-line.ps-code {
+    text-indent: -1.6em;
+
+    > span {
+      text-indent: 0em;
+      text-indent: 0em;
+    }
+
+    text-indent: -1.6em;
+  }
+}
+
+/* line number support */
+
+/* scope line support */
+
+.with-scopelines div.ps-block {
+  border-left-style: solid;
+  border-left-width: 0.09em;
+  padding-left: 0.6em;
+  border-color: var(--gray-light);
+}
+
+.ps-algorithmic {
+  &.with-linenum.with-scopelines > div.ps-block, &.with-scopelines > div.ps-block {
+    border-left: none;
+  }
+}

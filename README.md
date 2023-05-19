@@ -33,6 +33,7 @@
   + [x] KaTeX support
   + [x] Multiple authors support
   + [x] Proof environment
+  + [x] Pseudocode support
   + [x] ... (lots of adjustments on HTML, CSS, JS)
 
 ## Installation
