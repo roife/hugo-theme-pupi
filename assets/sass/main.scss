@@ -1223,7 +1223,7 @@ footer {
 
 .definition {
   &:before {
-    content: "Definition.\00a0\00a0";
+    content: "Def.\00a0\00a0";
     float: left;
     font-weight: bold;
   }
@@ -1231,7 +1231,7 @@ footer {
 
 .theorem {
     &:before {
-      content:"Theorem.\00a0\00a0";
+      content:"Thm.\00a0\00a0";
       float:left;
       font-weight:bold;
     }
@@ -1247,7 +1247,7 @@ footer {
 
 .corollary {
   &:before {
-    content:'Corollary.\00a0\00a0';
+    content:'Cor.\00a0\00a0';
     float:left;
     font-weight:bold;
   }
