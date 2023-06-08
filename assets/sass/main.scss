@@ -100,10 +100,10 @@ body {
 // -- Typography
 
 p {
-  margin: 30px 0;
+  margin: 25px 0;
   @media screen and (max-width: 768px) {
     & {
-      margin: 25px 0;
+      margin: 20px 0;
     }
   }
 }
@@ -400,6 +400,10 @@ samp {
       margin: 0 auto;
       font-size: 13px;
       color: $brand-gray;
+
+      > p {
+        margin: 0;
+      }
     }
 
     img {
