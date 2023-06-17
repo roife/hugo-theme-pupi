@@ -1268,3 +1268,11 @@ footer {
     font-weight:bold;
   }
 }
+
+.sample {
+  &:before {
+    content:'e.g.\00a0\00a0';
+    float:left;
+    font-weight:bold;
+  }
+}
