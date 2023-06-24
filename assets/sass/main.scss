@@ -1276,3 +1276,19 @@ footer {
     font-weight:bold;
   }
 }
+
+.question {
+  &:before {
+    content:'Q.\00a0\00a0';
+    float:left;
+    font-weight:bold;
+  }
+}
+
+.answer {
+  &:before {
+    content:'A.\00a0\00a0';
+    float:left;
+    font-weight:bold;
+  }
+}
