@@ -114,6 +114,14 @@
    $('div.' + env).not(':has(+div.proof)').wrap('<div class="math_block"></div>');
  });
 
+ $('div.proof').each(function() {
+   var $prevDiv = $(this).prev();
+
+   if (!proof_env.some(className => $prevDiv.hasClass(className))) {
+     $(this).wrapAll('<div class="math_block"></div>');
+   }
+ });
+
  $('div.question + div.answer').each(function() {
    $(this).prev('div.question').addBack().wrapAll('<div class="math_block"></div>');
  });
