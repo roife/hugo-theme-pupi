@@ -1261,6 +1261,14 @@ footer {
   }
 }
 
+.fact {
+  &:before {
+    content:'Fact.\00a0\00a0';
+    float:left;
+    font-weight:bold;
+  }
+}
+
 .proof {
   &:before {
     content:'Proof.\00a0\00a0';

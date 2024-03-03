@@ -105,7 +105,7 @@
  $("div.definition").wrap("<div class='math_block'></div>");
  $("div.sample").wrap("<div class='math_block'></div>");
 
- let proof_env = ["theorem", "lemma", "corollary", "proposition"];
+ let proof_env = ["theorem", "lemma", "corollary", "proposition", "fact"];
  proof_env.forEach(function(env) {
    $('div.' + env + ' + div.proof').each(function() {
      $(this).prev('div.' + env).addBack().wrapAll('<div class="math_block"></div>');
