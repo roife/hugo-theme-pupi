@@ -66,6 +66,10 @@
     background-color: #ccc;
     border: 2px;
   }
+
+  ::selection {
+    background-color: rgba(39, 77, 121, 0.80);
+  }
 }
 
 // the order is important
